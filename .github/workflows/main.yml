@@ -57,6 +57,5 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       - name: Docker run
         run: |
-          docker stop ${{ env.NAME }} && docker rm ${{ env.NAME }} && docker rmi ${{ env.DOCKER_IMAGE }}:latest
           docker build --tag ${{ env.DOCKER_IMAGE }} .
           docker run -d -p 4000:4000 --name go_cicd --restart always ${{ env.DOCKER_IMAGE }}:latest
