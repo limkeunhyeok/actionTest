@@ -55,8 +55,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
-      - name: Test
+      - name: ls-Test
         run: ls -al
+      - name: pwd-test
+        run: pwd
       - name: Docker run
         run: |
           docker build --tag ${{ env.DOCKER_IMAGE }} .
