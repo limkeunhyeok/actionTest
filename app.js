@@ -9,10 +9,6 @@ app.get("/test1", (req, res) => {
     res.send("test!");
 });
 
-app.get("/test2", (req, res) => {
-    res.send("test2");
-})
-
 app.listen(4000, () => {
     console.log("git action test!")
 })
