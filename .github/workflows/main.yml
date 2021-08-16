@@ -59,9 +59,8 @@ jobs:
         run: ls -al
       - name: pwd-test
         run: pwd
-      - name: cd-Test
-        run: cd actionTest
       - name: Docker run
         run: |
+          cd actionTest
           docker build --tag ${{ env.DOCKER_IMAGE }} .
           docker run -d -p 4000:4000 --name go_cicd --restart always ${{ env.DOCKER_IMAGE }}:latest
