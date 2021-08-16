@@ -59,6 +59,8 @@ jobs:
         run: ls -al
       - name: pwd-test
         run: pwd
+      - name: cd-Test
+        run: cd actionTest
       - name: Docker run
         run: |
           docker build --tag ${{ env.DOCKER_IMAGE }} .
